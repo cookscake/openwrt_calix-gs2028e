@@ -1,0 +1,7 @@
+config CALIX_PHY_RESET
+	bool "Calix GS2028E PHY Reset Driver"
+	depends on ARCH_QCOM && GPIOLIB
+	default y
+	help
+	  Early boot PHY reset driver for Calix GS2028E.
+	  Uses two GPIOs to perform a hard reset of the QCA8075 PHY package.

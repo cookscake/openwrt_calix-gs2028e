@@ -12,6 +12,7 @@ ipq60xx_setup_interfaces()
 
 	case "$board" in
 	8devices,mango-dvk|\
+	calix,gs2028e|\
 	glinet,gl-axt1800)
 		ucidef_set_interfaces_lan_wan "lan1 lan2" "wan"
 		;;
@@ -56,6 +57,11 @@ ipq60xx_setup_macs()
 	case $board in
 	alfa-network,ap120c-ax)
 		label_mac=$(mtd_get_mac_binary 0:ART 12)
+		;;
+	calix,gs2028e)
+		lan_mac=$(mtd_get_mac_ascii 0:appsblenv ethaddr)
+		wan_mac=$(macaddr_add "$lan_mac" 1)
+		label_mac=$lan_mac
 		;;
 	qihoo,360v6)
 		lan_mac=$(mtd_get_mac_ascii factory lanMac)

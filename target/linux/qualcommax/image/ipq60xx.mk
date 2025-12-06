@@ -35,6 +35,21 @@ define Device/alfa-network_ap120c-ax
 endef
 TARGET_DEVICES += alfa-network_ap120c-ax
 
+define Device/calix_gs2028e
+	$(call Device/FitImage)
+	$(call Device/UbiFit)
+	DEVICE_VENDOR := Calix
+	DEVICE_MODEL := GigaSpire BLAST u4
+	DEVICE_ALT0_VENDOR := Calix
+	DEVICE_ALT0_MODEL := GS2028E
+	BLOCKSIZE := 128k
+	PAGESIZE := 2048
+	DEVICE_DTS_CONFIG := config@cp01-c1
+	SOC := ipq6018
+	DEVICE_PACKAGES := ipq-wifi-calix_gs2028e
+endef
+TARGET_DEVICES += calix_gs2028e
+
 define Device/cambiumnetworks_xe3-4
 	$(call Device/FitImage)
 	$(call Device/UbiFit)

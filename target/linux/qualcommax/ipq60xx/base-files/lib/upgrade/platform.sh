@@ -154,6 +154,7 @@ platform_do_upgrade() {
 		fw_setenv bootcount 0
 		nand_do_upgrade "$1"
 		;;
+	calix,gs2028e|\
 	glinet,gl-ax1800|\
 	glinet,gl-axt1800|\
 	netgear,wax214)

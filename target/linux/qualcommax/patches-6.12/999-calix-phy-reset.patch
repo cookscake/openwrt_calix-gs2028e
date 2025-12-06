@@ -1,0 +1,15 @@
+--- a/drivers/platform/Makefile
++++ b/drivers/platform/Makefile
+@@ -14,3 +14,4 @@ obj-$(CONFIG_CZNIC_PLATFORMS)	+= cznic/
+ obj-$(CONFIG_SURFACE_PLATFORMS)	+= surface/
+ obj-$(CONFIG_ARM64_PLATFORM_DEVICES)	+= arm64/
+ obj-$(CONFIG_MIKROTIK)		+= mikrotik/
++obj-$(CONFIG_CALIX_PHY_RESET)	+= calix/
+--- a/drivers/platform/Kconfig
++++ b/drivers/platform/Kconfig
+@@ -19,3 +19,5 @@ source "drivers/platform/x86/Kconfig"
+ source "drivers/platform/arm64/Kconfig"
+
+ source "drivers/platform/mikrotik/Kconfig"
++
++source "drivers/platform/calix/Kconfig"
